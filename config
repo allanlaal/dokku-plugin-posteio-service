@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export POSTEIO_IMAGE=${POSTEIO_IMAGE:="dirtsimple/poste.io"}
-export POSTEIO_IMAGE_VERSION=${POSTEIO_IMAGE_VERSION:="2.2.2024"}
+export POSTEIO_IMAGE_VERSION=${POSTEIO_IMAGE_VERSION:="v2.2.2024"}
 
 OLD_POSTEIO_ROOT="${DOKKU_LIB_ROOT}/services/posteio"
 NEW_POSTEIO_ROOT="${DOKKU_LIB_ROOT}/data/posteio"

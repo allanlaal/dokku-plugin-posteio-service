@@ -11,11 +11,15 @@ posteio_start_func() {
     local CONTAINER_ID
     local DOMAIN_NAME="$(< "${POSTEIO_ROOT}/DOMAIN")"
 
-    for i in "${@}"; do
+    local CLAMAV="-e DISABLE_CLAMAV=TRUE";
+    local RSPAMD="-e DISABLE_RSPAMD=TRUE";    for i in "${@}"; do
       case ${i} in
-        --disable-clamav) local CLAMAV="-e DISABLE_CLAMAV=TRUE" ;;
-        --disable-rspamd) local RSPAMD="-e DISABLE_RSPAMD=TRUE" ;;
+        --disable-clamav) CLAMAV="-e DISABLE_CLAMAV=TRUE" ;;
+        --disable-rspamd) RSPAMD="-e DISABLE_RSPAMD=TRUE" ;;
         --disable-roundcube) local ROUNDCUBE="-e DISABLE_ROUNDCUBE=TRUE" ;;
+        --enable-clamav) CLAMAV="-e DISABLE_CLAMAV=FALSE" ;;
+        --enable-rspamd) RSPAMD="-e DISABLE_RSPAMD=FALSE" ;;
+        --enable-roundcube) ROUNDCUBE="-e DISABLE_ROUNDCUBE=FALSE" ;;
       esac
     done
 
@@ -39,7 +43,7 @@ posteio_start_func() {
 
 posteio_start() {
   declare desc="start posteio container"
-  declare args="[--disable-clamav|--disable-rspamd|--disable-roundcube]"
+  declare args="[--disable-clamav|--disable-rspamd|--disable-roundcube|--enable-clamav|--enable-rspamd|--enable-roundcube]"
 
   if [[ ! -f "${POSTEIO_ROOT}/CONTAINER" ]]; then
     if (docker inspect dokku.posteio &> /dev/null); then

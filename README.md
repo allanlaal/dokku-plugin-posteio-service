@@ -1,19 +1,15 @@
-# what makes this repo different?
+# Poste.io plugin for Dokku 
 
-You can run posteio as a dokku plugin and have other services running on the same dokku instance.
+### What makes this repo different?
 
+This will run as a dokku plugin and have other services running on the same dokku instance besides Poste.io.
 
-
-[![GitHub release](https://img.shields.io/github/release/d1ceward/dokku-posteio.svg)](https://github.com/d1ceward/dokku-posteio)
-[![Poste.io](https://img.shields.io/badge/Poste.io-2.4.1-blue.svg)](https://poste.io/changelog)
-[![Dokku](https://img.shields.io/badge/Dokku-Repo-blue.svg)](https://github.com/dokku/dokku)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/d1ceward/dokku-posteio/graphs/commit-activity)
-
-# Poste.io plugin for Dokku (v1.7.0)
+In this instance spamd and clamav are disabled by default, roundcube is enabled.
 
 ### What is Poste.io?
 
 Poste.io is an full featured email server runing in a docker container. Read more at the [poste.io](https://poste.io/) website.
+It supports wildcard aliases and has full Gmail support.
 
 ### What is Dokku?
 
@@ -31,21 +27,21 @@ purposes. Make sure to replace it to your domain name.
 ## Download plugin
 Log onto your Dokku Host to download and install plugin:
 ```bash
-dokku plugin:install https://github.com/allanlaal/dokku-posteio-dirtsimple.git
+# dokku plugin:install https://github.com/allanlaal/dokku-plugin-posteio-service.git
 ```
 
 ## Domain name
 Next setup domain name for posteio:
 
 ```bash
-dokku posteio:set-domain mail.example.com
+$ dokku posteio:set-domain mail.example.com
 ```
 
 ## Start container
 To start using Poste.io you need to start his docker container:
 
 ``` bash
-dokku posteio:start
+$ dokku posteio:start
 ```
 
 **Note:**
@@ -53,6 +49,10 @@ You can disable features by passing these optional parameters to the start comma
 - `--disable-clamav` to disable clamAV, it's useful to reduce memory usage if you don't need an antivirus protection.
 - `--disable-rspamd` to disable Rspamd, it's useful to reduce memory usage if you don't want a spam filtering system.
 - `--disable-roundcube` to disable the Roundcube webmail interface.
+also the other way around works:
+- `--enable-clamav`
+- `--enable-rspamd`
+- `--enable-roundcube`
 
 ## SSL Certificate
 

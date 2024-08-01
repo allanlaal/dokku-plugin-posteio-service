@@ -1,3 +1,9 @@
+# what makes this repo different?
+
+You can run posteio as a dokku plugin and have other services running on the same dokku instance.
+
+
+
 [![GitHub release](https://img.shields.io/github/release/d1ceward/dokku-posteio.svg)](https://github.com/d1ceward/dokku-posteio)
 [![Poste.io](https://img.shields.io/badge/Poste.io-2.4.1-blue.svg)](https://poste.io/changelog)
 [![Dokku](https://img.shields.io/badge/Dokku-Repo-blue.svg)](https://github.com/dokku/dokku)
@@ -25,7 +31,7 @@ purposes. Make sure to replace it to your domain name.
 ## Download plugin
 Log onto your Dokku Host to download and install plugin:
 ```bash
-dokku plugin:install https://github.com/d1ceward/dokku-posteio.git
+dokku plugin:install https://github.com/allanlaal/dokku-posteio-dirtsimple.git
 ```
 
 ## Domain name

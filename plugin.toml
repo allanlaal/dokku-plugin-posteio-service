@@ -1,4 +1,4 @@
 [plugin]
 description = "poste.io complete email service for dokku"
-version = "1.7.240801"
+version = "1.7.2408012"
 [plugin.config]

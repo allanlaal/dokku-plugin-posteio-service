@@ -2,13 +2,13 @@
 
 ### What makes this repo different?
 
-This will run as a dokku plugin and have other services running on the same dokku instance besides Poste.io.
+While the original Poste.io is meant to be run as an appliance (taking up the whole server and IP), this will run Poste.io as a dokku plugin and have other services running on the same dokku instance besides Poste.io.
 
 In this instance spamd and clamav are disabled by default, roundcube is enabled.
 
 ### What is Poste.io?
 
-Poste.io is an full featured email server runing in a docker container. Read more at the [poste.io](https://poste.io/) website.
+Poste.io is an full featured email server running in a docker container. Read more at the [poste.io](https://poste.io/) website.
 It supports wildcard aliases and has full Gmail support.
 
 ### What is Dokku?

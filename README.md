@@ -27,7 +27,7 @@ purposes. Make sure to replace it to your domain name.
 ## Download plugin
 Log onto your Dokku Host as `root` and install plugin:
 ```bash
-dokku plugin:install https://github.com/allanlaal/dokku-plugin-posteio-service.git
+dokku plugin:install https://github.com/allanlaal/dokku-posteio.git
 ```
 
 ## Domain name

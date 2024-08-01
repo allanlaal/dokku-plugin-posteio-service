@@ -25,23 +25,23 @@ you've ever seen - _Docker powered mini-Heroku_.
 purposes. Make sure to replace it to your domain name.
 
 ## Download plugin
-Log onto your Dokku Host to download and install plugin:
+Log onto your Dokku Host as `root` and install plugin:
 ```bash
-# dokku plugin:install https://github.com/allanlaal/dokku-plugin-posteio-service.git
+dokku plugin:install https://github.com/allanlaal/dokku-plugin-posteio-service.git
 ```
 
 ## Domain name
-Next setup domain name for posteio:
+Next setup domain name for posteio using your normal `dokku` user:
 
 ```bash
-$ dokku posteio:set-domain mail.example.com
+dokku posteio:set-domain mail.example.com
 ```
 
 ## Start container
 To start using Poste.io you need to start his docker container:
 
 ``` bash
-$ dokku posteio:start
+dokku posteio:start
 ```
 
 **Note:**
